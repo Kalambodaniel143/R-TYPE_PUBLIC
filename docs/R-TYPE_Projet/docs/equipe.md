@@ -9,3 +9,4 @@ Our multidisciplinary team brings together complementary talents to tackle this 
 ### Mission
 
 The main mission  is to develop a modular Game Engine and Build the R-Type Game that uses this Game Engine
+name: Deploy VitePress site
