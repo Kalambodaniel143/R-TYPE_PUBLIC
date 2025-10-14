@@ -21,9 +21,9 @@ jobs:
         working-directory: docs/R-TYPE_Projet/docs/
         run: npm run build
 
-    #   # Étape 3 : déployer sur GitHub Pages
-    #   - name: Deploy to GitHub Pages
-    #     uses: peaceiris/actions-gh-pages@v4
-    #     with:
-    #       github_token: ${{ secrets.GITHUB_TOKEN }}
-    #       publish_dir: docs/R-TYPE_Projet/docs/.vitepress/dist
+      # Étape 3 : déployer sur GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/R-TYPE_Projet/docs/.vitepress/dist
