@@ -4,7 +4,9 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
     lang: 'en-US',
     title: 'R-TYPE EPITECH PROJET',
-    base: '/R-TYPE_Projet/',
+    // base: process.env.NODE_ENV === 'production' ? '/2025-Team-Epibot-Docs/' : '/',
+
+    base: ProcessingInstruction.env.NODE_ENV === 'production' ? '/R-TYPE_Projet/' : '/',
     link: '/',
     description: 'First part of R-type',
 
