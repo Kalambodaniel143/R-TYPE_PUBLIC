@@ -21,7 +21,7 @@ jobs:
       # Étape 2 : construire le site
       - name: Build VitePress site
         working-directory: docs/R-TYPE_Projet/docs/
-        run: npm run docs:build
+        run: npm run build
 
       # Étape 3 : déployer sur GitHub Pages
       - name: Deploy to GitHub Pages
