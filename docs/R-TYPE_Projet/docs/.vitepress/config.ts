@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
     lang: 'en-US',
     title: 'R-TYPE EPITECH PROJET',
+    base: '/R-TYPE_Projet/',
     link: '/',
     description: 'First part of R-type',
 
