@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: cd docs/R-TYPE_Projet && npm install
+      - run: cd docs/R-TYPE_Projet/ && npm install
       - run: cd docs/R-TYPE_Projet/docs && npm run build
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
