@@ -481,7 +481,6 @@ cmake --build build -j$(nproc)
 
 ```bash
 cmake --build build --target fclean
-# Les binaires et build/ sont dans .gitignore
 ```
 
 ---
