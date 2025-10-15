@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as r}from"./app.5c53a8f7.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"R-type_Part1/Builder/build.md"}'),a={name:"R-type_Part1/Builder/build.md"};function o(s,c,n,d,i,p){return r(),t("div")}const u=e(a,[["render",o]]);export{l as __pageData,u as default};

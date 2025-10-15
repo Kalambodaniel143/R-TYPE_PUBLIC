@@ -104,6 +104,11 @@ export default defineConfig({
                     link: '/R-type_Part1/Protocol/',
                     collapsed: true,
                 },
+                {
+                    text: 'Choix Technologies',
+                    link: '/R-type_Part1/Technologie/',
+                    collapsed: true,
+                },
                 ],
             }
         ],
