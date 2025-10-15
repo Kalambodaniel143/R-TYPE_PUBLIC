@@ -111,6 +111,8 @@ export default defineConfig({
                     items: [
                     { text: 'OOP VS ECS', link: 'R-type_Part1/Technologie/' },
                     { text: 'AABB Comme Collider System', link: 'R-type_Part1/Technologie/collider' },
+                    { text: 'Le choix de Conan', link: 'R-type_Part1/Technologie/build.md'},
+                    { text: 'Pourquoi le view', link: 'R-type_Part1/Technologie/view.md'},
                     ]
                 },
                 ],

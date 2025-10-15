@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as r}from"./app.b41ca6dd.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"R-type_Part1/ECS/System/NetworkSystem.md"}'),a={name:"R-type_Part1/ECS/System/NetworkSystem.md"};function s(o,c,n,m,p,_){return r(),e("div")}const S=t(a,[["render",s]]);export{i as __pageData,S as default};
