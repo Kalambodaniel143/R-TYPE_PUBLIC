@@ -39,18 +39,4 @@ for (auto e : view<PositionComponent, VelocityComponent>(reg)) {
     pos.x += vel.vx * dt;
     pos.y += vel.vy * dt;
 }
-
-// Parcours direct (ex : sur toutes les entités)
-for (entity_t e = 0; e < reg.size(); ++e) {
-    auto& posArr = reg.get_components<PositionComponent>();
-    auto& velArr = reg.get_components<VelocityComponent>();
-    if (!posArr.has(e) || !velArr.has(e))
-        continue;
-    auto& pos = posArr[e];
-    auto& vel = velArr[e];
-    pos.x += vel.vx * dt;
-    pos.y += vel.vy * dt;
-}
-
 ```
-

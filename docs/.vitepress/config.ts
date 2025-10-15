@@ -113,6 +113,7 @@ export default defineConfig({
                     { text: 'AABB Comme Collider System', link: 'R-type_Part1/Technologie/collider' },
                     { text: 'Le choix de Conan', link: 'R-type_Part1/Technologie/build.md'},
                     { text: 'Pourquoi le view', link: 'R-type_Part1/Technologie/view.md'},
+                    { text: 'Notre choix pour la gestion des Inputs', link :'R-type_Part1/Technologie/La_gestion_des_inputs.md'},
                     ]
                 },
                 ],
