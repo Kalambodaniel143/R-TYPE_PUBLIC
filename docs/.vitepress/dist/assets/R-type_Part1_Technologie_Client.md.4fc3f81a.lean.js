@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./app.419fa203.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"R-type_Part1/Technologie/Client.md"}'),o={name:"R-type_Part1/Technologie/Client.md"};function n(r,c,s,i,p,_){return a(),t("div")}const m=e(o,[["render",n]]);export{d as __pageData,m as default};

@@ -1,9 +1,8 @@
-<!-- # Étude comparative — Architecture du client réseau
+# Étude comparative — Architecture du client réseau
 
 ## 1. Objectif
 
-
-L’objectif de cette partie de la documentation est de mettre en évidence la pertinence des choix faits dans la partie Client, leurs avantages, limites et les opportunités d’évolution.
+L'objectif de cette partie de la documentation est de mettre en évidence la pertinence des choix faits dans la partie Client, leurs avantages, limites et les opportunités d'évolution.
 
 ---
 
@@ -11,11 +10,11 @@ L’objectif de cette partie de la documentation est de mettre en évidence la p
 
 | Composant                           | Rôle                                                                                        | Technologie              |
 | ----------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------ |
-| **ClientRoom**                      | Gère la communication avec une *room* distante via UDP (envoi d’inputs / réception d’état). | `boost::asio`            |
+| **ClientRoom**                      | Gère la communication avec une *room* distante via UDP (envoi d'inputs / réception d'état). | `boost::asio`            |
 | **client/main.cpp**                 | Programme de test : initialise le client, envoie des commandes, gère les threads.           | C++17                    |
 | **PacketsManager / PacketsFactory** | Partagés avec le serveur, gèrent la sérialisation/désérialisation.                          | C++ binaire              |
 | **Réseau**                          | UDP pour gameplay, TCP possible pour handshake / login.                                     | `boost::asio`            |
-| **Thread model**                    | `io_context` + thread d’entrée console + callbacks async.                                   | `std::thread`, async I/O |
+| **Thread model**                    | `io_context` + thread d'entrée console + callbacks async.                                   | `std::thread`, async I/O |
 
 ---
 
@@ -41,11 +40,11 @@ Le choix `boost::asio` UDP est performant et pertinent pour un client de jeu C++
 | -------------------- | ---------------------------------- | ------------------------------------- | ----------------------------------- |
 | **Performance**      | Excellente, binaire compact        | Très bonne pour Protobuf/FlatBuffers  | Optimal pour le temps réel        |
 | **Interopérabilité** | Restreinte (format propriétaire)   | Multi-langage (C#, JS, etc.)          | Complexité côté client non-C++   |
-| **Évolutivité**      | Ajout manuel des paquets           | Génération auto via `.proto`          | Plus d’entretien manuel          |
+| **Évolutivité**      | Ajout manuel des paquets           | Génération auto via `.proto`          | Plus d'entretien manuel          |
 | **Debuggabilité**    | Données binaires difficiles à lire | Protobuf/JSON plus transparents       | Moins pratique pour debug rapide |
 
 **Conclusion :**
-Le système custom est efficace, mais pour supporter d’autres clients (Unity, Web), migrer vers **Protobuf** permettrait une compatibilité multi-langage sans sacrifier la performance.
+Le système custom est efficace, mais pour supporter d'autres clients (Unity, Web), migrer vers **Protobuf** permettrait une compatibilité multi-langage sans sacrifier la performance.
 
 ---
 
@@ -67,11 +66,11 @@ Le threading actuel fonctionne, mais la modernisation vers **coroutines (`co_spa
 | Critère             | Implémentation actuelle                        | Approche moderne (event loop / ECS / job system) | Analyse                          |
 | ------------------- | ---------------------------------------------- | ------------------------------------------------ | -------------------------------- |
 | **Couplage**        | Direct : `ClientRoom` met à jour `RTypeGame`   | Découplé via events / messages                   | Risque de dépendance forte    |
-| **Synchronisation** | Temps réel (callbacks → mise à jour immédiate) | File d’événements thread-safe                    | Risque de condition de course |
+| **Synchronisation** | Temps réel (callbacks → mise à jour immédiate) | File d'événements thread-safe                    | Risque de condition de course |
 | **Extensibilité**   | Moyenne                                        | Élevée si via events                             | ➕ À améliorer pour modularité    |
 
 **Conclusion :**
-Le couplage direct est simple pour un prototype, mais un **bus d’événements** ou un **système ECS** permettrait une meilleure séparation entre le réseau et la logique de jeu.
+Le couplage direct est simple pour un prototype, mais un **bus d'événements** ou un **système ECS** permettrait une meilleure séparation entre le réseau et la logique de jeu.
 
 ---
 
@@ -84,7 +83,7 @@ Le couplage direct est simple pour un prototype, mais un **bus d’événements*
 | **Tests automatisés**      | Possible via scripts shell    | Difficile en GUI                     | Pratique pour CI         |
 
 **Conclusion :**
-La console est adaptée au développement, mais une intégration future à l’UI du jeu (overlay réseau) améliorerait l’expérience finale.
+La console est adaptée au développement, mais une intégration future à l'UI du jeu (overlay réseau) améliorerait l'expérience finale.
 
 ---
 
@@ -95,7 +94,7 @@ La console est adaptée au développement, mais une intégration future à l’U
 | **Réseau**                | `boost::asio` UDP       | Solide              | Ajouter couche fiabilité (ou passer à ENet) |
 | **Paquets**               | Custom binaire          | Performant          | Migrer vers Protobuf pour compatibilité     |
 | **Threading**             | `std::thread` + async   | Lisibilité moyenne | Migrer vers coroutines C++20                |
-| **Couplage jeu**          | Direct avec `RTypeGame` | Serré              | Introduire bus d’événements                 |
+| **Couplage jeu**          | Direct avec `RTypeGame` | Serré              | Introduire bus d'événements                 |
 | **Interface utilisateur** | CLI                     | Simple              | Intégrer à moteur de jeu plus tard          |
 | **Logs / debug**          | Console directe         | Minimal            | Ajouter logger (`spdlog`)                   |
 | **Sécurité**              | Non mentionnée          |                     | Ajouter validation et timeout côté client   |
@@ -115,46 +114,3 @@ La console est adaptée au développement, mais une intégration future à l’U
        }
    }
    ```
-
-2. **Introduire un bus d’événements pour la synchro avec le jeu :**
-
-   ```cpp
-   EventBus bus;
-   bus.subscribe(EventType::GameStateReceived, [](const GameState& s) {
-       RTypeGame::instance().updateFromState(s);
-   });
-   ```
-
-3. **Standardiser les paquets avec Protobuf :**
-
-   ```proto
-   message InputPacket {
-       int32 playerId = 1;
-       float dx = 2;
-       float dy = 3;
-   }
-   ```
-
-4. **Améliorer les logs réseau :**
-
-   * Utiliser `spdlog` avec timestamps et couleur.
-   * Sauvegarde automatique dans `logs/client.log`.
-
-5. **Ajouter un mode test automatisé :**
-
-   * Script Python ou Bash simulant des paquets reçus.
-   * Vérification que `ClientRoom` réagit correctement.
-
----
-
-## 6. Conclusion
-
-L’architecture actuelle du client réseau est **légère, performante et parfaitement adaptée à un prototype multijoueur**.
-Elle repose sur des standards C++ robustes (`boost::asio`, `std::thread`, paquets binaires personnalisés) et une conception claire.
-
-Cependant, pour améliorer la **maintenabilité**, la **compatibilité interplateforme** et la **fiabilité réseau**, les évolutions suivantes sont recommandées :
-
-* Moderniser avec **coroutines** (`co_await`),
-* Introduire **Protobuf** pour la sérialisation,
-* Découpler le réseau du moteur via **événements**,
-* Et renforcer la **robustesse réseau** (fiabilité UDP, gestion des erreurs, logs). -->
