@@ -5,7 +5,7 @@ export default defineConfig({
     lang: 'en-US',
     title: 'R-TYPE EPITECH PROJET',
     // base: process.env.NODE_ENV === 'production' ? '/2025-Team-Epibot-Docs/' : '/',
-    base: process.env.NODE_ENV === 'production' ? '/R-TYPE_Projet/' : '/',
+    base: process.env.NODE_ENV === 'production' ? '/R-TYPE_PUBLIC/' : '/',
     link: '/',
     description: 'First part of R-type',
 
