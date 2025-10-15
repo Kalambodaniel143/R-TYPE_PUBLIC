@@ -31,7 +31,7 @@ Chaque système applique une logique spécifique, par exemple :
 
 ---
 
-## vantages du modèle ECS
+##  Avantages du modèle ECS
 
 - **Composition plutôt qu’héritage** : les entités sont assemblées à partir de composants simples et réutilisables.  
 - **Performance accrue** : les données sont mieux organisées en mémoire (meille
