@@ -1,1 +1,0 @@
-import{_ as t,c as e,o}from"./app.d647c389.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"R-type_Part1/ECS/Component/component.md"}'),n={name:"R-type_Part1/ECS/Component/component.md"};function a(r,c,p,s,m,_){return o(),e("div")}const f=t(n,[["render",a]]);export{i as __pageData,f as default};
