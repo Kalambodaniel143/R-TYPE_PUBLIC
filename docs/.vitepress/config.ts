@@ -108,6 +108,10 @@ export default defineConfig({
                     text: 'Choix Technologies',
                     link: '/R-type_Part1/Technologie/',
                     collapsed: true,
+                    items: [
+                    { text: 'OOP VS ECS', link: 'R-type_Part1/Technologie/' },
+                    { text: 'AABB Comme Collider System', link: 'R-type_Part1/Technologie/collider' },
+                    ]
                 },
                 ],
             }
