@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as r}from"./app.ab183e9a.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"R-TYPE_Projet/docs/R-type_Part1/Client/client.md"}'),a={name:"R-TYPE_Projet/docs/R-type_Part1/Client/client.md"};function o(c,n,s,_,i,p){return r(),e("div")}const m=t(a,[["render",o]]);export{l as __pageData,m as default};

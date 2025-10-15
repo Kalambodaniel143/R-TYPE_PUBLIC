@@ -11,16 +11,14 @@ jobs:
         with:
           node-version: 18
 
-      # Étape 1 : installer les dépendances
       - name: Install dependencies
+        working-directory: docs/
         run: npm ci
 
-      # Étape 2 : construire le site
       - name: Build VitePress site
         working-directory: docs/
         run: npm run build
 
-      # Étape 3 : déployer sur GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
