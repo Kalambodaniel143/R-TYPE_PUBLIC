@@ -1,6 +1,5 @@
-# 👾 SpawnObject — Système de génération d’ennemis
+#  SpawnObject — Système de génération d’ennemis
 
-## 📖 Description générale
 Le `SpawnObject` est un système du moteur ECS responsable de **la création dynamique d’ennemis** ou d’autres entités contrôlées par l’ordinateur.  
 Il est appelé régulièrement (par exemple à chaque vague ou intervalle de temps) pour ajouter de nouveaux ennemis dans le jeu.
 
@@ -23,10 +22,8 @@ Ce système illustre la **phase d’apparition** du cycle de gameplay :
 
 ---
 
-## 🧠 Fonctionnement interne
-
-### 🔹 Étapes d’exécution
-1. **Génération de coordonnées aléatoires**  
+### 🔹 Les étapes d’exécution
+1. **Génération de coordonnées de façon aléatoires**  
    - Utilisation de `rand()` pour définir une position Y aléatoire entre 0 et 1080 pixels.  
    - La position X est fixée à `1920` (bord droit de l’écran), pour faire apparaître les ennemis à droite.
 

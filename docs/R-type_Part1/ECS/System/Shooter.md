@@ -13,4 +13,5 @@ Chaque fois que le système est appelé, il crée de **nouvelles entités de typ
 |------------|------|
 | `PositionComponent` | Position actuelle de l’entité sur l’axe X/Y. |
 | `RectComponent` | Dimensions graphiques (largeur/hauteur) du sprite. |
-|
+
+---

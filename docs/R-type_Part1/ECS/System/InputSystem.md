@@ -1,22 +1,20 @@
-# ⌨️ Input System - Moteur Graphique R-Type
+# ⌨Input System - Moteur Graphique R-Type
 
 ---
-
-## 📋 Vue d'ensemble
 
 L'**Input System** gère toutes les entrées utilisateur (clavier, souris) et les expose via :
 
-- ✅ **Actions sémantiques** : Booléens persistants (actionPressed, actionJustPressed, actionJustReleased)
-- ✅ **Axes** : Valeurs continues (-1, 0, +1) pour les déplacements
-- ✅ **Touches directes** : Accès brut aux touches individuelles
-- ✅ **Souris** : Position et boutons
-- ✅ **Rebinding dynamique** : Modifier les contrôles à l'exécution
-- ✅ **Singleton pattern** : Accès global facile
-- ✅ **Abstraction backend** : Indépendant du renderer
+- **Actions sémantiques** : Booléens persistants (actionPressed, actionJustPressed, actionJustReleased)
+- **Axes** : Valeurs continues (-1, 0, +1) pour les déplacements
+- **Touches directes** : Accès brut aux touches individuelles
+- **Souris** : Position et boutons
+- **Rebinding dynamique** : Modifier les contrôles à l'exécution
+- **Singleton pattern** : Accès global facile
+- **Abstraction backend** : Indépendant du renderer
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ### Flux d'Entrée
 
@@ -108,7 +106,7 @@ enum class MouseButton {
 
 ---
 
-## 🚀 Initialisation
+##  Initialisation
 
 ### 1. Charger le Backend d'Entrée
 
@@ -186,7 +184,7 @@ std::cout << "✓ Contrôles configurés" << std::endl;
 
 ---
 
-## 🎮 Utilisation Courante
+##  Utilisation Courante
 
 ### Actions (Booléens)
 
@@ -300,7 +298,7 @@ if (inputMgr.isMouseButtonJustPressed(input::MouseButton::Right)) {
 
 ---
 
-## 🔄 Cycle de Mise à Jour
+## Cycle de Mise à Jour
 
 ### Où Appeler update() ?
 
@@ -335,7 +333,7 @@ while (backend->isOpen()) {
 
 ---
 
-## ⚙️ Configuration Avancée
+## Configuration Avancée
 
 ### Rebinding Dynamique
 
@@ -410,7 +408,7 @@ if (comboSequence.size() >= 3 &&
 
 ---
 
-## 🎮 Exemples Pratiques
+## Exemples Pratiques
 
 ### Jeu de Type Shoot'em Up (R-Type)
 
@@ -533,7 +531,7 @@ while (backend->isOpen()) {
 
 ---
 
-## 📊 État des Touches
+## État des Touches
 
 ### État Complet d'une Touche
 
@@ -616,7 +614,7 @@ if (inputMgr.isActionJustReleased("Charge")) {
 
 ---
 
-## 📚 Référence Complète
+##  Référence Complète
 
 ### Méthodes Actions
 
@@ -653,7 +651,7 @@ if (inputMgr.isActionJustReleased("Charge")) {
 
 ---
 
-## 💡 Bonnes Pratiques
+## Bonnes Pratiques
 
 1. **Créer des actions sémantiques** : Utiliser des noms logiques ("Shoot" plutôt que "Space")
 2. **Multi-binding** : Permettre plusieurs touches pour une action (ZQSD + Flèches)

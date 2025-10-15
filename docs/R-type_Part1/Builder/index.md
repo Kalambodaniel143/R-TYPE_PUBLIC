@@ -1,6 +1,6 @@
-# 🎮 R-Type - Build Guide
+# R-Type - Build Guide
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Opti**Ubuntu/Debian :**
 ```bash
@@ -60,7 +60,7 @@ cmake --build build -j$(nproc)
 
 ---
 
-## 📦 Prérequis
+##  Prérequis
 
 ### Outils requis
 
@@ -103,7 +103,7 @@ pipx ensurepath
 
 ---
 
-## 🛠️ Commandes de build
+## Commandes de build
 
 ### Compilation Release (optimisée)
 
@@ -157,7 +157,7 @@ cmake --build build --target fclean
 
 ---
 
-## 🎯 Compilation sélective
+##  Compilation sélective
 
 ```bash
 cmake --build build --target r-type_server    # Serveur seul
@@ -168,7 +168,7 @@ cmake --build build --target plugins          # Tous les plugins
 
 ---
 
-## 📚 Structure du projet
+##  Structure du projet
 
 ### Fichiers CMake
 
@@ -247,7 +247,7 @@ cmake_layout                # Organisation standard CMake
 
 ---
 
-## ❓ Dépannage
+## Dépannage
 
 ### "conan: command not found"
 
@@ -382,46 +382,46 @@ cmake --build build --verbose
 
 ---
 
-## 🎓 Concepts clés
+## Concepts clés
 
 ### Script build.sh vs Commandes manuelles
 
 **build.sh** : Script minimal pour simplifier le build
-- ✅ Installe automatiquement cmake et conan si manquants
-- ✅ Une seule commande : `./build.sh`
-- ✅ Nettoyage simple : `./build.sh clean`
-- ✅ Idéal pour débuter ou déployer rapidement
-- ❌ Moins de contrôle (toujours en Release)
+- Installe automatiquement cmake et conan si manquants
+- Une seule commande : `./build.sh`
+- Nettoyage simple : `./build.sh clean`
+- Idéal pour débuter ou déployer rapidement
+- Moins de contrôle (toujours en Release)
 
 **Commandes CMake** : Contrôle total
-- ✅ Choix du build type (Release/Debug)
-- ✅ Compilation sélective (targets spécifiques)
-- ✅ Plus de flexibilité
-- ❌ Plus de commandes à mémoriser
+- Choix du build type (Release/Debug)
+- Compilation sélective (targets spécifiques)
+- Plus de flexibilité
+- Plus de commandes à mémoriser
 
 **Recommandation** : Utilise `build.sh` pour débuter, passe à CMake quand tu veux plus de contrôle.
 
 ### Pourquoi Conan ?
 
-- ✅ Gestion automatique des dépendances (Boost, SFML, etc.)
-- ✅ Multi-plateforme (Linux, Windows, macOS)
-- ✅ Pas besoin d'installer manuellement les bibliothèques
-- ✅ Versions spécifiques garanties
+- Gestion automatique des dépendances (Boost, SFML, etc.)
+- Multi-plateforme (Linux, Windows, macOS)
+- Pas besoin d'installer manuellement les bibliothèques
+- Versions spécifiques garanties
 
 ### Pourquoi CMake ?
 
-- ✅ Standard de l'industrie C++
-- ✅ Multi-plateforme
-- ✅ Génération automatique de Makefiles
-- ✅ Intégration avec les IDEs (VS Code, CLion, etc.)
+- Standard de l'industrie C++
+- Multi-plateforme
+- Génération automatique de Makefiles
+- Intégration avec les IDEs (VS Code, CLion, etc.)
 
 ### Build statique vs dynamique
 
 Ce projet utilise des **bibliothèques statiques** (`shared=False`) :
-- ✅ Binaires autonomes (pas de `.so` système requis)
-- ✅ Déploiement simplifié
-- ✅ Pas de problèmes de versions
-- ❌ Binaires plus gros
+- Binaires autonomes (pas de `.so` système requis)
+- Déploiement simplifié
+- Pas de problèmes de versions
+- Binaires plus gros
 
 ### Binaires à la racine
 
@@ -435,7 +435,7 @@ Les binaires sont générés **directement à la racine** du projet (pas dans `b
 
 ---
 
-## 🚀 Workflow de développement
+## Workflow de développement
 
 ### Avec le script build.sh (simple)
 
@@ -486,7 +486,7 @@ cmake --build build --target fclean
 
 ---
 
-## 📖 Pour aller plus loin
+## Pour aller plus loin
 
 - [CMake Documentation](https://cmake.org/documentation/)
 - [Conan Documentation](https://docs.conan.io/)

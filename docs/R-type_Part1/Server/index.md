@@ -1,4 +1,4 @@
-<!-- # Server_Technique
+# Server_Technique
 
 ## 1. Introduction
 Ce document décrit l'architecture réseau et le fonctionnement interne du **serveur** fourni dans les archives (`Networking/Networking/server`). Il cible un public technique (développeurs) souhaitant comprendre, maintenir ou étendre le serveur.
@@ -61,4 +61,4 @@ Chaque paquet implémente `IPacket` (type identifier + sérialisation). `Packets
 ## 8. Compilation (exemple)
 Prérequis :
 - compilo C++ (g++/clang++) support C++17 ou supérieur.
-- Libs : Boost (system, asio header-only possible), pthread. -->
+- Libs : Boost (system, asio header-only possible), pthread.
