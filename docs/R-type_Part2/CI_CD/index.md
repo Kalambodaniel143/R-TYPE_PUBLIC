@@ -1,14 +1,14 @@
-# 🚀 CI/CD Pipeline - R-Type Project
+# CI/CD Pipeline - R-Type Project by Master KALAMBO DANIEL
 
 Ce document décrit le pipeline CI/CD complet du projet R-Type utilisant GitHub Actions.
 
-## 📋 Vue d'ensemble
+## Vue d'ensemble
 
 Le pipeline se compose de **3 jobs principaux** :
 
-1. **🔨 Build & Test** : Compilation et tests unitaires
-2. **🐳 Docker Build & Push** : Création et publication des images Docker
-3. **📢 Notify** : Notifications de statut
+1. **Build & Test** : Compilation et tests unitaires
+2. **Docker Build & Push** : Création et publication des images Docker
+3. **Notify** : Notifications de statut
 
 ## 🔄 Workflow
 
@@ -43,7 +43,7 @@ Le pipeline se compose de **3 jobs principaux** :
 └─────────────────────────┘
 ```
 
-## 🎯 Déclenchement
+## Déclenchement
 
 Le pipeline se déclenche automatiquement sur :
 
@@ -51,7 +51,7 @@ Le pipeline se déclenche automatiquement sur :
 - ✅ **Pull Request** vers `main`
 - ✅ **Déclenchement manuel** via l'interface GitHub Actions
 
-## 🔨 Job 1 : Build & Test
+## Job 1 : Build & Test
 
 ### Environnement
 - **OS** : Ubuntu 22.04
@@ -107,13 +107,13 @@ rtype-binaries-{SHA}/
 └── Assets/**/*
 ```
 
-## 🐳 Job 2 : Docker Build & Push
+## Job 2 : Docker Build & Push
 
 **Condition** : Succès du Job 1 + Push sur `main` ou `dev`
 
 ### Images créées
 
-#### 🖥️ Image Serveur
+#### Image Serveur
 - **Base** : Ubuntu 22.04
 - **Taille** : ~200 MB
 - **Port** : 4242, 8080
@@ -123,7 +123,7 @@ rtype-binaries-{SHA}/
   - `{branch}` (nom de la branche)
   - `{branch}-{sha}` (commit hash)
 
-#### 🎮 Image Client
+#### Image Client
 - **Base** : Ubuntu 22.04 + SFML
 - **Taille** : ~300 MB
 - **Display** : X11 forwarding requis
@@ -147,7 +147,7 @@ Le pipeline utilise automatiquement `GITHUB_TOKEN` pour :
 - ✅ Pull/Push vers GitHub Container Registry
 - ✅ Permissions : `contents:read`, `packages:write`
 
-## 📊 Job 3 : Notifications
+## Job 3 : Notifications
 
 Ce job s'exécute **toujours** (même en cas d'échec) et :
 
@@ -156,9 +156,9 @@ Ce job s'exécute **toujours** (même en cas d'échec) et :
 - ✅ Génère un résumé dans GitHub Actions
 - ❌ Échoue si le build a échoué
 
-## 🚀 Utilisation
+##  Utilisation
 
-### 1️⃣ Développement local
+###  Développement local
 
 ```bash
 # Compiler localement
@@ -172,7 +172,7 @@ cmake --build . -j
 ./r-type_client --help
 ```
 
-### 2️⃣ Déclencher le pipeline
+###  Déclencher le pipeline
 
 ```bash
 # Méthode 1 : Push sur une branche surveillée
@@ -184,7 +184,7 @@ git push origin main
 # Actions > CI/CD Pipeline > Run workflow
 ```
 
-### 3️⃣ Utiliser les images Docker
+###  Utiliser les images Docker
 
 ```bash
 # Pull depuis GitHub Container Registry
@@ -195,17 +195,17 @@ docker run -d -p 4242:4242 \
   ghcr.io/epitechpge3-2025/g-cpp-500-cot-5-1-rtype-2/rtype-server:latest
 ```
 
-## 📈 Monitoring
+## Monitoring
 
 ### Via GitHub Actions UI
 
 1. Accédez à **Actions** dans le repository
 2. Sélectionnez le workflow **"R-Type CI/CD Pipeline"**
 3. Visualisez :
-   - ✅ Status de chaque job
-   - 📊 Temps d'exécution
-   - 📦 Artifacts disponibles
-   - 📝 Logs détaillés
+   - Status de chaque job
+   - Temps d'exécution
+   - Artifacts disponibles
+   - Logs détaillés
 
 ### Badges de statut
 
@@ -250,43 +250,6 @@ permissions:
   packages: write   # Publier les images Docker
 ```
 
-## 🐛 Troubleshooting
-
-### ❌ Build échoue
-
-1. **Vérifier les logs**
-   ```bash
-   # Dans GitHub Actions > Workflow run > Build & Test
-   ```
-
-2. **Dépendances manquantes**
-   - Vérifier `conanfile.txt`
-   - Vérifier les paquets apt installés
-
-3. **Erreurs de compilation**
-   - Vérifier C++17 compatibility
-   - Vérifier les includes manquants
-
-### ❌ Docker build échoue
-
-1. **Artifacts manquants**
-   - Vérifier que le Job 1 a réussi
-   - Vérifier l'upload d'artifacts
-
-2. **Permissions GHCR**
-   - Vérifier les permissions du repository
-   - Settings > Packages > Package settings
-
-### ❌ Tests échouent
-
-1. **Tester localement**
-   ```bash
-   ./r-type_server --help
-   timeout 5 ./r-type_server
-   ```
-
-2. **Vérifier les dépendances runtime**
-
 ## 📚 Fichiers du pipeline
 
 ```
@@ -302,20 +265,10 @@ docker/
 .dockerignore                  # Exclusions Docker
 ```
 
-## 🎯 Optimisations
-
-### Cache Docker Layers
-
-Le pipeline utilise GitHub Actions Cache :
-```yaml
-cache-from: type=gha
-cache-to: type=gha,mode=max
-```
-
 **Avantages** :
-- ⚡ Builds plus rapides (2-3x)
-- 💰 Réduction du temps de build
-- 🔄 Réutilisation des layers Docker
+- Builds plus rapides (2-3x)
+- Réduction du temps de build
+- Réutilisation des layers Docker
 
 ### Build parallèle
 
@@ -333,14 +286,6 @@ retention-days: 7
 
 Les artifacts sont conservés 7 jours pour économiser l'espace.
 
-## 📝 Checklist avant push
-
-- [ ] Code compile localement
-- [ ] Tests passent
-- [ ] Pas de fichiers secrets/credentials
-- [ ] `.gitignore` à jour
-- [ ] Documentation mise à jour
-- [ ] Commit message clair
 
 ## 🔗 Liens utiles
 
@@ -357,6 +302,3 @@ En cas de problème :
 3. Ouvrez une issue sur GitHub
 
 ---
-
-**Dernière mise à jour** : Novembre 2025
-**Version du pipeline** : 1.0.0

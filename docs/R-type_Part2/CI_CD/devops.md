@@ -1,4 +1,4 @@
-# 🐳 R-Type Docker Deployment Guide
+# R-Type Docker Deployment Guide
 
 Ce guide explique comment utiliser les images Docker du projet R-Type.
 
@@ -174,7 +174,7 @@ docker build -f docker/Dockerfile.client -t rtype-client:local .
 docker run -d -p 4242:4242 rtype-server:local
 ```
 
-## 🔐 Authentification GitHub Container Registry
+## Authentification GitHub Container Registry
 
 Pour pull les images privées :
 

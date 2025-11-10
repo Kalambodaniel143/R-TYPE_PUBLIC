@@ -43,7 +43,9 @@ export default defineConfig({
                 items: [
                 { text: 'CI/CD', link: '/R-type_Part2/CI_CD/' },
                 { text: 'Docker', link: '/R-type_Part2/CI_CD/devops' },
-
+                { text: 'Client', link: '/R-type_Part2/README_LOBBY_CLIENT.md'},
+                { text: 'System', link: '/R-type_Part2/README_LOBBY_SYSTEM.md'},
+                { text: 'Metrics', link: '/R-type_Part2/README_METRICS_QUICKSTART.md'},
                 ]
             }
         ],
