@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app.c58da356.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"R-type_Part1/ECS/System/MovementSystem.md"}'),s={name:"R-type_Part1/ECS/System/MovementSystem.md"};function o(r,n,m,c,p,_){return a(),t("div")}const S=e(s,[["render",o]]);export{i as __pageData,S as default};
