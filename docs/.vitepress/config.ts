@@ -22,7 +22,7 @@ export default defineConfig({
             { text: 'Home', link: '/' },
             // { text: 'Our Team', link: '/equipe' },
             { 
-                text: 'Rtype_part1_for_Dev', 
+                text: 'RTYPE_PART1_FOR_DEV', 
                 items: [
                 { text: 'Game Engine', link: '/R-type_Part1/ECS/' },
                 { text: 'Build System', link: '/R-type_Part1/Builder/' },
@@ -32,12 +32,20 @@ export default defineConfig({
                 ]
             },
             { 
-                text: 'Rtype_part1_for_user', 
+                text: 'R-TYPE_PART1_FOR_USER', 
                 items: [
                 { text: 'How to Build', link: '/R-type_Part1/Builder/' },
                 { text: 'Commands', link: '/command' },
                 ]
             },
+            {
+                text: 'R-TYPE_PART2',
+                items: [
+                { text: 'CI/CD', link: '/R-type_Part2/CI_CD/' },
+                { text: 'Docker', link: '/R-type_Part2/CI_CD/devops' },
+
+                ]
+            }
         ],
         sidebar: [
             {
