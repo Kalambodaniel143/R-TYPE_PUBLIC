@@ -41,6 +41,7 @@ export default defineConfig({
             {
                 text: 'R-TYPE_PART2',
                 items: [
+                { text: 'Start', link: '/R-type_Part2/' },    
                 { text: 'CI/CD', link: '/R-type_Part2/CI_CD/' },
                 { text: 'Docker', link: '/R-type_Part2/CI_CD/devops' },
                 { text: 'Client', link: '/R-type_Part2/README_LOBBY_CLIENT.md'},
