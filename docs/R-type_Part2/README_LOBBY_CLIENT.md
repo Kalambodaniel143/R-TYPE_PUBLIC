@@ -1,14 +1,14 @@
-# 🎮 Lobby Client - Test & Compilation
+# Lobby Client - Test & Compilation
 
-## ✅ Corrections Appliquées
+## Corrections Appliquées
 
 Toutes les erreurs ont été corrigées :
-- ✅ **LoginPackets.hpp** : Header guards corrigés (`LOGINPACKETS_HPP_`)
-- ✅ **ClientHub** : Utilise `LoginPackets.hpp` avec 3 champs (username, password, game)
-- ✅ **LobbyState** : Méthode `getRoomToJoin()` ajoutée
-- ✅ **IGraphicsBackend** : API corrigée avec font management
+- **LoginPackets.hpp** : Header guards corrigés (`LOGINPACKETS_HPP_`)
+- **ClientHub** : Utilise `LoginPackets.hpp` avec 3 champs (username, password, game)
+- **LobbyState** : Méthode `getRoomToJoin()` ajoutée
+- **IGraphicsBackend** : API corrigée avec font management
 
-## 🚀 Compilation Rapide
+## Compilation Rapide
 
 ### Option 1: Script automatique
 ```bash
@@ -32,7 +32,7 @@ g++ -std=c++17 -I. -o lobby_client_test \
     -lboost_system -pthread -llz4
 ```
 
-## 🧪 Test
+## Test
 
 **Terminal 1: Serveur**
 ```bash
@@ -44,15 +44,15 @@ g++ -std=c++17 -I. -o lobby_client_test \
 ./lobby_client_test
 ```
 
-## 📦 Fichiers Créés
+##  Fichiers Créés
 
-- ✅ `Networking/client/ClientHub.hpp/cpp` (250 lignes)
-- ✅ `RType-Game/Packets/LobbyPacket.hpp/cpp` (450 lignes)
-- ✅ `RType-Game/States/LobbyState.hpp/cpp` (300 lignes)
-- ✅ `Networking/client/main_lobby_test.cpp` (test simple)
-- ✅ `compile_lobby_client.sh` (script de compilation)
+- `Networking/client/ClientHub.hpp/cpp` (250 lignes)
+- `RType-Game/Packets/LobbyPacket.hpp/cpp` (450 lignes)
+- `RType-Game/States/LobbyState.hpp/cpp` (300 lignes)
+- `Networking/client/main_lobby_test.cpp` (test simple)
+- `compile_lobby_client.sh` (script de compilation)
 
-## ⚙️ Architecture
+## Architecture
 
 ```
 ClientHub (TCP 4242)

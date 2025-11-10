@@ -1,12 +1,12 @@
-# 🎮 R-Type Lobby System - Documentation Technique
+# R-Type Lobby System - Documentation Technique
 
-## 📋 Vue d'ensemble
+##  Vue d'ensemble
 
 Le système de lobby implémente une architecture client/serveur TCP complète permettant la gestion de rooms multijoueurs avant de rejoindre la partie UDP.
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ### Composants principaux
 
@@ -50,7 +50,7 @@ CLIENT                                    SERVER
 
 ---
 
-## 🔧 Composants techniques
+## Composants techniques
 
 ### 1. ClientHub (`Networking/client/ClientHub.hpp/cpp`)
 
@@ -200,7 +200,7 @@ public:
 
 ---
 
-## 📡 Protocole réseau
+## Protocole réseau
 
 ### PacketType (IPacket.hpp)
 ```cpp
@@ -245,7 +245,7 @@ Puis: LZ4 compress → XOR encrypt → envoi TCP
 
 ---
 
-## 🧪 Tests
+## Tests
 
 ### Test en ligne de commande
 
